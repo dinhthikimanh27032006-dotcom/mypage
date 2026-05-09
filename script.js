@@ -1,25 +1,24 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const heroItems = document.querySelectorAll('.animate-hero');
-  heroItems.forEach((item, index) => {
-    item.style.transitionDelay = `${index * 120}ms`;
-    item.classList.add('visible');
-  });
+const themeToggle = document.getElementById('themeToggle');
+const supportedTheme = document.documentElement;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
+function setTheme(theme) {
+  supportedTheme.setAttribute('data-theme', theme);
+  themeToggle.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+  localStorage.setItem('preferred-theme', theme);
+}
 
-  document.querySelectorAll('.animate-scroll').forEach((section) => {
-    observer.observe(section);
-  });
+function loadTheme() {
+  const storedTheme = localStorage.getItem('preferred-theme');
+  if (storedTheme === 'dark') {
+    setTheme('dark');
+  } else {
+    setTheme('light');
+  }
+}
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = supportedTheme.getAttribute('data-theme');
+  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
 });
+
+loadTheme();

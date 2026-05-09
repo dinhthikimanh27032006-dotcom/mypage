@@ -1,0 +1,54 @@
+You are a professional UI/UX designer and front-end developer.
+
+Your task is to design and generate a clean, minimal personal portfolio website using only HTML and CSS (no frameworks, no JavaScript except for a simple theme toggle if needed).
+
+### DESIGN STYLE
+- Theme: Minimal, modern, clean
+- Default theme: White (light mode)
+- Include a toggle button at the top of the page to switch between Light Mode and Dark Mode
+- Use soft shadows, rounded corners, and a clean layout
+- Font: Sans-serif
+- Spacing: Generous whitespace, balanced layout
+- Responsive: Must work well on desktop and mobile
+
+### STRUCTURE
+Create a single-page portfolio with the following sections:
+1. Header (fixed at top)
+   - Name: "Đinh Thị Kim Anh"
+   - Navigation links: About, Skills, Projects, Contact
+   - Theme toggle button (Light/Dark)
+2. Hero Section
+   - Large name heading
+   - Subtitle: "Sinh viên khoa CNTT - Đồ họa kĩ thuật số"
+   - Short intro (1–2 sentences)
+3. About Section
+   - Personal description
+   - Include hobbies: "Tự học và nghiên cứu 3D model game"
+4. Skills Section
+   - Display skills as cards or tags
+   - Focus on: 3D Modeling, Game Design Basics, UI/UX Design, Self-learning
+5. Projects Section
+   - Show 2–3 placeholder project cards
+   - Each card includes: Project title, short description, placeholder image
+6. Contact Section
+   - Simple contact info (email placeholder)
+   - Optional social icons (no external libraries)
+7. Footer
+   - Simple copyright text
+
+### THEME TOGGLE
+- Implement a theme switch (light/dark)
+- Use CSS variables for colors
+- Dark mode should be elegant (dark background, soft text contrast)
+
+### OUTPUT REQUIREMENTS
+- Provide full HTML file
+- Provide full CSS file (separate or inside <style>)
+- Clean, well-structured code
+- Use semantic HTML (section, header, nav, etc.)
+- Add comments for readability
+
+### EXTRA
+- Add subtle hover effects
+- Smooth transitions for theme switching
+- Keep it simple but visually appealing
