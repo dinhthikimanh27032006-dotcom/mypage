@@ -66,6 +66,32 @@ function generateFloatingIcons() {
   });
 }
 
+// Generate Sparkle Particles
+function generateSparkleParticles() {
+  const particlesContainer = document.querySelector('.sparkle-particles');
+  if (!particlesContainer) return;
+  
+  const particleCount = 20;
+  
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'sparkle-particle';
+    particle.textContent = '✨';
+    
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const delay = Math.random() * 8;
+    const size = 8 + Math.random() * 8;
+    
+    particle.style.left = x + '%';
+    particle.style.top = y + '%';
+    particle.style.fontSize = size + 'px';
+    particle.style.animationDelay = delay + 's';
+    
+    particlesContainer.appendChild(particle);
+  }
+}
+
 function updateStarVisibility() {
   const starsContainer = document.getElementById('starsContainer');
   if (!starsContainer) return;
@@ -120,6 +146,7 @@ function parallaxScroll() {
   const skyWrapper = document.querySelector('.sky-wrapper');
   const sunflowerField = document.querySelector('.sunflower-field');
   const floatingIcons = document.querySelector('.floating-icons');
+  const sparkleParticles = document.querySelector('.sparkle-particles');
   
   if (skyWrapper) {
     skyWrapper.style.transform = `translateY(${scrollY * 0.5}px)`;
@@ -131,6 +158,10 @@ function parallaxScroll() {
   
   if (floatingIcons) {
     floatingIcons.style.transform = `translateY(${scrollY * 0.2}px)`;
+  }
+  
+  if (sparkleParticles) {
+    sparkleParticles.style.transform = `translateY(${scrollY * 0.1}px)`;
   }
 }
 
@@ -159,6 +190,7 @@ window.addEventListener('load', () => {
   generateStars();
   generateFallingPetals();
   generateFloatingIcons();
+  generateSparkleParticles();
   revealOnScroll();
   
   themeToggle.addEventListener('click', () => {
