@@ -3,139 +3,255 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Đinh Thị Kim Anh | Portfolio</title>
+  <title>Đinh Thị Kim Anh - Creative Digital Artist</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bubble-wrapper" aria-hidden="true">
-    <span class="bubble bubble-1"></span>
-    <span class="bubble bubble-2"></span>
-    <span class="bubble bubble-3"></span>
-    <span class="bubble bubble-4"></span>
-    <span class="bubble bubble-5"></span>
+  <!-- Background Layers -->
+  <div class="sky-wrapper" aria-hidden="true">
+    <div class="sky"></div>
+    <div class="clouds-container">
+      <span class="cloud cloud-1"></span>
+      <span class="cloud cloud-2"></span>
+      <span class="cloud cloud-3"></span>
+    </div>
+    <div class="stars-container" id="starsContainer"></div>
   </div>
-  <div class="field-wrapper" aria-hidden="true">
-    <span class="blade blade-1"></span>
-    <span class="blade blade-2"></span>
-    <span class="blade blade-3"></span>
-    <span class="blade blade-4"></span>
-    <span class="blade blade-5"></span>
-    <span class="blade blade-6"></span>
-    <span class="blade blade-7"></span>
-    <span class="blade blade-8"></span>
-    <span class="blade blade-9"></span>
-    <span class="blade blade-10"></span>
+
+  <div class="sunflower-field" aria-hidden="true">
+    <span class="sunflower sunflower-1">🌻</span>
+    <span class="sunflower sunflower-2">🌻</span>
+    <span class="sunflower sunflower-3">🌻</span>
+    <span class="sunflower sunflower-4">🌻</span>
+    <span class="sunflower sunflower-5">🌻</span>
+    <span class="sunflower sunflower-6">🌻</span>
+    <span class="sunflower sunflower-7">🌻</span>
+    <span class="sunflower sunflower-8">🌻</span>
   </div>
+
+  <!-- Header -->
   <header class="page-header">
-    <div class="header-inner">
-      <a class="logo" href="#home">Đinh Thị Kim Anh</a>
-      <nav class="page-nav" aria-label="Điều hướng trang">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+    <div class="header-container">
+      <a href="#home" class="logo">Đinh Thị Kim Anh</a>
+      <nav class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
-      <button id="themeToggle" class="theme-toggle" aria-label="Chuyển giao diện">Dark Mode</button>
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
     </div>
   </header>
 
-  <main>
+  <main class="main-content">
+    <!-- Hero Section -->
     <section class="hero" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow">Portfolio cá nhân</p>
-        <h1>Đinh Thị Kim Anh</h1>
-        <p class="hero-subtitle">Sinh viên khoa CNTT - Đồ họa kĩ thuật số</p>
-        <p class="hero-text">Tôi tạo ra những trang portfolio sạch, tối giản và chuyên nghiệp, đồng thời theo đuổi nghiên cứu về 3D model game.</p>
-        <a class="button button-primary" href="#contact">Liên hệ</a>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-image-card">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Thiết kế portfolio UI" />
+      <div class="hero-content">
+        <h1 class="hero-title">Đinh Thị Kim Anh</h1>
+        <p class="hero-subtitle">Creative Digital Artist</p>
+        <div class="story-quote">
+          <p>Giữa bầu trời xanh và những cánh hoa hướng dương,<br />
+          mình chọn theo đuổi sự sáng tạo bằng màu sắc,<br />
+          thiết kế và thế giới 3D.</p>
         </div>
-        <div class="hero-small-cards">
-          <div class="mini-card">UI/UX Focus</div>
-          <div class="mini-card">3D Model Game</div>
-          <div class="mini-card">Minimal Design</div>
+        <div class="hero-cta">
+          <a href="#projects" class="cta-btn cta-primary">Khám phá dự án</a>
+          <a href="#contact" class="cta-btn cta-secondary">Hãy liên hệ</a>
+        </div>
+      </div>
+      <div class="floating-elements">
+        <span class="sparkle sparkle-1">✨</span>
+        <span class="sparkle sparkle-2">✨</span>
+        <span class="sparkle sparkle-3">✨</span>
+        <span class="floating-flower">🌼</span>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="section-container">
+        <h2 class="section-title">
+          <span class="title-icon">📖</span>
+          Nhật ký hành trình
+        </h2>
+        <div class="about-grid">
+          <div class="about-card glass-card">
+            <h3>Về bản thân</h3>
+            <p>Tôi là một sinh viên ngành Công Nghệ Thông Tin với đam mê sâu sắc về đồ họa kỹ thuật số. Mỗi ngày, tôi khám phá những cách mới để diễn đạt sáng tạo qua màu sắc, hình dáng và chuyển động.</p>
+          </div>
+          <div class="about-card glass-card">
+            <h3>Định hướng</h3>
+            <p>Mình hướng đến việc trở thành một Digital Artist toàn diện, chuyên về Thiết kế Poster, 3D Modeling và UI/UX Design. Mục tiêu là tạo ra những sản phẩm có linh hồn, chứa cảm xúc.</p>
+          </div>
+          <div class="about-card glass-card">
+            <h3>Đam mê</h3>
+            <p>Tự học là con đường tôi chọn. Mỗi dự án là một bài học, mỗi frame 3D là một bước tiến. Nghiên cứu game art và world building là thứ khiến tôi mất ngủ vì hứng thú.</p>
+          </div>
+          <div class="about-card glass-card">
+            <h3>Hành trình</h3>
+            <p>Từ những bước đầu tiên trong Photoshop đến việc xây dựng thế giới 3D, tôi học hỏi mỗi ngày. Mỗi project không chỉ là sản phẩm, mà còn là phần của hành trình phát triển bản thân.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="panel about-panel" id="about">
-      <div class="section-header">
-        <span>About</span>
-        <h2>Giới thiệu ngắn gọn</h2>
-      </div>
-      <p class="section-text">Tôi là sinh viên ngành Công nghệ thông tin với niềm đam mê về đồ họa kỹ thuật số. Tôi tự học và nghiên cứu 3D model game, đồng thời xây dựng kỹ năng UI/UX để tạo ra trải nghiệm web gọn gàng và dễ tiếp cận.</p>
-      <div class="info-grid">
-        <div>
-          <h3>Thông tin</h3>
-          <p>Đinh Thị Kim Anh</p>
-          <p>Sinh viên khoa CNTT - Đồ họa kĩ thuật số</p>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+      <div class="section-container">
+        <h2 class="section-title">
+          <span class="title-icon">🎨</span>
+          Những chapter của hành trình
+        </h2>
+        <div class="projects-grid">
+          <article class="project-card glass-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="UI/UX Design Portfolio" />
+              <div class="project-overlay">
+                <p>Hover để xem chi tiết</p>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Thiết kế UI/UX Modern</h3>
+              <p class="project-role">Vai trò: UI Designer</p>
+              <p class="project-story">Hành trình tìm kiếm sự cân bằng giữa thẩm mỹ và chức năng. Một dự án về việc làm cho công nghệ trở nên người bạn thân thiết hơn.</p>
+            </div>
+          </article>
+
+          <article class="project-card glass-card">
+            <div class="project-image">
+              <img src="https://github.com/dinhthikimanh27032006-dotcom/mypage/blob/main/tom.jpg?raw=true" alt="3D AI Model" />
+              <div class="project-overlay">
+                <p>Hover để xem chi tiết</p>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>3D AI Character Model</h3>
+              <p class="project-role">Vai trò: 3D Artist</p>
+              <p class="project-story">Khám phá sự giao thoa giữa AI và nghệ thuật. Mô hình này là minh chứng cho việc công nghệ có thể tạo nên vẻ đẹp.</p>
+            </div>
+          </article>
+
+          <article class="project-card glass-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?auto=format&fit=crop&w=600&q=80" alt="3D Environment" />
+              <div class="project-overlay">
+                <p>Hover để xem chi tiết</p>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>3D Environment Design</h3>
+              <p class="project-role">Vai trò: Environment Artist</p>
+              <p class="project-story">Xây dựng thế giới từ tưởng tượng. Mỗi chi tiết, mỗi ánh sáng đều có mục đích tạo cảm xúc cho người xem.</p>
+            </div>
+          </article>
         </div>
-        <div>
-          <h3>Sở thích</h3>
-          <p>Tự học và nghiên cứu 3D model game</p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+      <div class="section-container">
+        <h2 class="section-title">
+          <span class="title-icon">🌸</span>
+          Khu vườn kỹ năng
+        </h2>
+        <div class="skills-garden">
+          <div class="skill-flower skill-item">
+            <div class="skill-icon">🎨</div>
+            <h3>Photoshop</h3>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
+            <p class="progress-text">90%</p>
+          </div>
+
+          <div class="skill-flower skill-item">
+            <div class="skill-icon">✏️</div>
+            <h3>Illustrator</h3>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
+            <p class="progress-text">80%</p>
+          </div>
+
+          <div class="skill-flower skill-item">
+            <div class="skill-icon">🎯</div>
+            <h3>UI/UX Design</h3>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+            <p class="progress-text">85%</p>
+          </div>
+
+          <div class="skill-flower skill-item">
+            <div class="skill-icon">💻</div>
+            <h3>HTML/CSS</h3>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
+            <p class="progress-text">80%</p>
+          </div>
+
+          <div class="skill-flower skill-item">
+            <div class="skill-icon">🎭</div>
+            <h3>3D Modeling</h3>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 75%"></div>
+            </div>
+            <p class="progress-text">75%</p>
+          </div>
+
+          <div class="skill-flower skill-item">
+            <div class="skill-icon">🎬</div>
+            <h3>Poster Design</h3>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 88%"></div>
+            </div>
+            <p class="progress-text">88%</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="panel skills-panel" id="skills">
-      <div class="section-header">
-        <span>Skills</span>
-        <h2>Kỹ năng nổi bật</h2>
-      </div>
-      <div class="skill-grid">
-        <div class="skill-card">3D Modeling</div>
-        <div class="skill-card">Game Design Basics</div>
-        <div class="skill-card">UI/UX Design</div>
-        <div class="skill-card">Self-learning</div>
-      </div>
-    </section>
-
-    <section class="panel projects-panel" id="projects">
-      <div class="section-header">
-        <span>Projects</span>
-        <h2>Một số dự án mẫu</h2>
-      </div>
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-image project-image-1"></div>
-          <div class="project-content">
-            <h3>Portfolio UI đơn giản</h3>
-            <p>Thiết kế giao diện web trắng tinh, bố cục rõ ràng và dễ đọc.</p>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="section-container">
+        <h2 class="section-title">
+          <span class="title-icon">💌</span>
+          Một lời mời kết nối
+        </h2>
+        <div class="contact-card glass-card">
+          <p class="contact-text">
+            Nếu bạn muốn cùng mình tạo nên những sản phẩm đầy màu sắc và cảm hứng,<br />
+            hoặc đơn giản muốn chia sẻ về thế giới sáng tạo của riêng bạn,<br />
+            hãy kết nối với tôi qua các kênh dưới đây. 🌟
+          </p>
+          <div class="contact-methods">
+            <a href="mailto:dinhthikimanh@example.com" class="contact-link contact-email">
+              <span class="contact-icon">✉️</span>
+              Email
+            </a>
+            <a href="https://facebook.com" class="contact-link contact-social">
+              <span class="contact-icon">👤</span>
+              Facebook
+            </a>
+            <a href="https://behance.com" class="contact-link contact-social">
+              <span class="contact-icon">🎨</span>
+              Behance
+            </a>
+            <a href="https://instagram.com" class="contact-link contact-social">
+              <span class="contact-icon">📸</span>
+              Instagram
+            </a>
           </div>
-        </article>
-        <article class="project-card">
-          <div class="project-image">
-            <img src="https://github.com/dinhthikimanh27032006-dotcom/mypage/blob/main/tom.jpg?raw=true" alt="Mô hình 3D concept game" />
-          </div>
-          <div class="project-content">
-            <h3>Mô hình 3D AI</h3>
-            <p>Minh họa ý tưởng mô hình game với phong cách gọn gàng và hiện đại.</p>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-image project-image-3"></div>
-          <div class="project-content">
-            <h3>3d enviroment AI </h3>
-            <p>Thiết kế trải nghiệm người dùng trực quan và dễ tương tác.</p>
-          </div>
-        </article>
+        </div>
       </div>
-    </section>
-
-    <section class="panel contact-panel" id="contact">
-      <div class="section-header">
-        <span>Contact</span>
-        <h2>Liên hệ</h2>
-      </div>
-      <p class="section-text">Nếu bạn muốn hợp tác hoặc trao đổi về dự án 3D model game và thiết kế UI/UX, hãy gửi email cho tôi.</p>
-      <a class="button button-secondary" href="mailto:hello@example.com">hello@example.com</a>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="page-footer">
-    <p>© 2026 Đinh Thị Kim Anh. Portfolio cá nhân.</p>
+    <p>© 2026 Đinh Thị Kim Anh. Tạo ra từ tình yêu với sáng tạo. 🌻</p>
   </footer>
 
   <script src="script.js"></script>
