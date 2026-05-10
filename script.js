@@ -168,22 +168,21 @@ window.addEventListener('load', () => {
 });
 
 function initTypingEffect() {
-  const typedText = document.getElementById('typedText');
-  if (!typedText) return;
+  const text = "Creative Digital Artist";
+  const typedText = document.getElementById("typedText");
 
-  const text = 'Creative Digital Artist';
-  const speed = 120;
-  let index = 0;
+  typedText.textContent = ""; // Clear existing text
+  let i = 0;
 
-  function type() {
-    if (index <= text.length) {
-      typedText.textContent = text.slice(0, index);
-      index += 1;
-      setTimeout(type, speed);
+  function typingEffect() {
+    if (i < text.length) {
+      typedText.textContent += text.charAt(i);
+      i++;
+      setTimeout(typingEffect, 100);
     }
   }
 
-  setTimeout(type, 0);
+  typingEffect();
 }
 
 window.addEventListener('scroll', parallaxScroll, { passive: true });
