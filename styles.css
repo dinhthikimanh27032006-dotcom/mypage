@@ -280,6 +280,19 @@ html[data-theme="dark"] .petal {
   filter: drop-shadow(0 0 5px var(--accent-glow));
 }
 
+.floating-icon.heart-yellow {
+  animation-duration: 9s;
+  animation-delay: 6s;
+  color: var(--primary);
+  filter: drop-shadow(0 0 3px var(--accent-glow));
+}
+
+.floating-icon.bubble {
+  animation-duration: 7s;
+  animation-delay: 7s;
+  opacity: 0.8;
+}
+
 @keyframes float-gentle {
   0%, 100% {
     transform: translateY(0) rotate(0deg) scale(1);
@@ -471,6 +484,14 @@ html[data-theme="dark"] .page-header {
   line-height: 1.8;
   color: var(--text-light);
   font-style: italic;
+}
+
+.story-quote-secondary {
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  opacity: 0.9;
 }
 
 .hero-cta {
