@@ -21,32 +21,49 @@ themeToggle.addEventListener('click', () => {
   updateThemeButton(newTheme);
 });
 
-// Generate Stars in Dark Mode
-function generateStars() {
-  const starsContainer = document.getElementById('starsContainer');
-  if (!starsContainer) return;
+// Generate Falling Petals
+function generateFallingPetals() {
+  const petalsContainer = document.getElementById('fallingPetals');
+  if (!petalsContainer) return;
   
-  const starCount = 50;
+  const petalCount = 25;
   
-  for (let i = 0; i < starCount; i++) {
-    const star = document.createElement('div');
-    star.className = 'star';
+  for (let i = 0; i < petalCount; i++) {
+    const petal = document.createElement('div');
+    petal.className = 'petal';
+    petal.textContent = '�';
     
     const x = Math.random() * 100;
-    const y = Math.random() * 60;
-    const duration = 2 + Math.random() * 3;
+    const duration = 10 + Math.random() * 8;
+    const delay = Math.random() * 10;
+    const size = 18 + Math.random() * 12;
+    const rotationSpeed = Math.random() * 360;
+    
+    petal.style.left = x + '%';
+    petal.style.fontSize = size + 'px';
+    petal.style.animationDuration = duration + 's';
+    petal.style.animationDelay = delay + 's';
+    petal.style.setProperty('--rotation', rotationSpeed + 'deg');
+    
+    petalsContainer.appendChild(petal);
+  }
+}
+
+// Generate Floating Icons
+function generateFloatingIcons() {
+  const iconsContainer = document.querySelector('.floating-icons');
+  if (!iconsContainer) return;
+  
+  const icons = iconsContainer.querySelectorAll('.floating-icon');
+  icons.forEach((icon, index) => {
+    const top = 10 + Math.random() * 80;
+    const left = 5 + Math.random() * 90;
     const delay = Math.random() * 5;
     
-    star.style.left = x + '%';
-    star.style.top = y + '%';
-    star.style.animationDuration = duration + 's';
-    star.style.animationDelay = delay + 's';
-    
-    starsContainer.appendChild(star);
-  }
-  
-  // Show stars only in dark mode
-  updateStarVisibility();
+    icon.style.top = top + '%';
+    icon.style.left = left + '%';
+    icon.style.animationDelay = delay + 's';
+  });
 }
 
 function updateStarVisibility() {
@@ -102,6 +119,7 @@ function parallaxScroll() {
   const scrollY = window.scrollY;
   const skyWrapper = document.querySelector('.sky-wrapper');
   const sunflowerField = document.querySelector('.sunflower-field');
+  const floatingIcons = document.querySelector('.floating-icons');
   
   if (skyWrapper) {
     skyWrapper.style.transform = `translateY(${scrollY * 0.5}px)`;
@@ -109,6 +127,10 @@ function parallaxScroll() {
   
   if (sunflowerField) {
     sunflowerField.style.transform = `translateY(${scrollY * 0.3}px)`;
+  }
+  
+  if (floatingIcons) {
+    floatingIcons.style.transform = `translateY(${scrollY * 0.2}px)`;
   }
 }
 
@@ -135,12 +157,34 @@ projectCards.forEach(card => {
 window.addEventListener('load', () => {
   initTheme();
   generateStars();
+  generateFallingPetals();
+  generateFloatingIcons();
   revealOnScroll();
   
   themeToggle.addEventListener('click', () => {
     setTimeout(updateStarVisibility, 100);
   });
+  initTypingEffect();
 });
+
+function initTypingEffect() {
+  const typedText = document.getElementById('typedText');
+  if (!typedText) return;
+
+  const text = 'Creative Digital Artist';
+  const speed = 120;
+  let index = 0;
+
+  function type() {
+    if (index <= text.length) {
+      typedText.textContent = text.slice(0, index);
+      index += 1;
+      setTimeout(type, speed);
+    }
+  }
+
+  setTimeout(type, 0);
+}
 
 window.addEventListener('scroll', parallaxScroll, { passive: true });
 

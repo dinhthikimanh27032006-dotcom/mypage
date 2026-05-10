@@ -1,16 +1,17 @@
 /* ==================== COLOR VARIABLES ==================== */
 :root {
-  --primary: #facc15;
-  --primary-dark: #eab308;
-  --secondary: #3b82f6;
+  --primary: #fbbf24; /* Vàng hoa hướng dương */
+  --primary-dark: #f59e0b;
+  --secondary: #3b82f6; /* Xanh bầu trời */
   --secondary-light: #60a5fa;
-  --sky-light: #87ceeb;
-  --sky-dark: #001a4d;
+  --sky-light: #87ceeb; /* Xanh bầu trời sáng */
+  --sky-dark: #1e3a8a; /* Xanh navy */
   --text-light: #1f2937;
   --text-dark: #f3f4f6;
   --glass-light: rgba(255, 255, 255, 0.8);
   --glass-dark: rgba(30, 41, 59, 0.8);
-  --glow: rgba(250, 204, 21, 0.4);
+  --glow: rgba(251, 191, 36, 0.4); /* Glow vàng */
+  --accent-glow: rgba(251, 191, 36, 0.6);
 }
 
 html[data-theme="dark"] {
@@ -33,7 +34,7 @@ html {
 
 body {
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background: linear-gradient(180deg, var(--sky-light) 0%, #e0f2ff 50%, #fffbeb 100%);
+  background: linear-gradient(180deg, var(--sky-light) 0%, #e0f2ff 50%, #fef3c7 100%);
   color: var(--text-light);
   position: relative;
   overflow-x: hidden;
@@ -41,7 +42,7 @@ body {
 }
 
 html[data-theme="dark"] body {
-  background: linear-gradient(180deg, #0c1423 0%, #1a2847 50%, #2d1b4e 100%);
+  background: linear-gradient(180deg, #0c1423 0%, #1e3a8a 50%, #2d1b4e 100%);
   color: var(--text-light);
 }
 
@@ -57,13 +58,13 @@ html[data-theme="dark"] body {
 .sky {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--sky-light) 0%, #e0f2ff 50%, #fffbeb 100%);
+  background: linear-gradient(180deg, var(--sky-light) 0%, #e0f2ff 50%, #fef3c7 100%);
   z-index: 1;
   transition: background 0.8s ease;
 }
 
 html[data-theme="dark"] .sky {
-  background: linear-gradient(180deg, #0c1423 0%, #1a2847 50%, #2d1b4e 100%);
+  background: linear-gradient(180deg, #0c1423 0%, #1e3a8a 50%, #2d1b4e 100%);
 }
 
 /* Clouds */
@@ -144,7 +145,7 @@ html[data-theme="dark"] .sky {
   right: 0;
   height: 300px;
   z-index: -10;
-  background: linear-gradient(180deg, transparent 0%, rgba(217, 119, 6, 0.1) 50%, rgba(180, 83, 9, 0.3) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(251, 191, 36, 0.1) 50%, rgba(245, 158, 11, 0.3) 100%);
   pointer-events: none;
   overflow: hidden;
 }
@@ -159,7 +160,8 @@ html[data-theme="dark"] .sky {
 }
 
 html[data-theme="dark"] .sunflower {
-  filter: drop-shadow(0 10px 20px rgba(250, 204, 21, 0.2));
+  filter: drop-shadow(0 10px 20px rgba(251, 191, 36, 0.3));
+  opacity: 0.9;
 }
 
 .sunflower-1 { left: 5%; font-size: 100px; animation-delay: 0s; }
@@ -170,11 +172,131 @@ html[data-theme="dark"] .sunflower {
 .sunflower-6 { left: 68%; font-size: 85px; animation-delay: 0.3s; }
 .sunflower-7 { left: 80%; font-size: 95px; animation-delay: 1.2s; }
 .sunflower-8 { left: 90%; font-size: 105px; animation-delay: 0.6s; }
+.sunflower-9 { left: 35%; font-size: 75px; animation-delay: 2s; }
+.sunflower-10 { left: 70%; font-size: 115px; animation-delay: 1.8s; }
 
 @keyframes sway {
   0%, 100% { transform: rotate(0deg) translateX(0); }
-  25% { transform: rotate(1deg) translateX(3px); }
-  75% { transform: rotate(-1deg) translateX(-3px); }
+  25% { transform: rotate(2deg) translateX(5px); }
+  75% { transform: rotate(-2deg) translateX(-5px); }
+}
+
+/* Falling Petals */
+.falling-petals {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.7;
+  animation: fall 8s linear infinite;
+  color: var(--primary);
+  filter: blur(0.5px);
+}
+
+html[data-theme="dark"] .petal {
+  color: var(--primary);
+  opacity: 0.9;
+  filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.5)) blur(0.5px);
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg) scale(1);
+    opacity: 0;
+    filter: blur(0px);
+  }
+  10% {
+    opacity: 0.7;
+    filter: blur(0.5px);
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) scale(0.9);
+    filter: blur(1px);
+  }
+  90% {
+    opacity: 0.7;
+    filter: blur(0.5px);
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px)) rotate(360deg) scale(0.8);
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+
+/* Floating Icons */
+.floating-icons {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -5;
+}
+
+.floating-icon {
+  position: absolute;
+  font-size: 16px;
+  opacity: 0.6;
+  animation: float-gentle 6s infinite ease-in-out;
+  color: var(--primary);
+}
+
+.floating-icon.sparkle {
+  animation-duration: 8s;
+  animation-delay: 0s;
+}
+
+.floating-icon.glow-dot {
+  animation-duration: 7s;
+  animation-delay: 1s;
+  filter: drop-shadow(0 0 5px var(--accent-glow));
+}
+
+.floating-icon.leaf {
+  animation-duration: 9s;
+  animation-delay: 2s;
+}
+
+.floating-icon.star-mini {
+  animation-duration: 6s;
+  animation-delay: 3s;
+  filter: drop-shadow(0 0 3px var(--accent-glow));
+}
+
+.floating-icon.flower-pixel {
+  animation-duration: 10s;
+  animation-delay: 4s;
+}
+
+.floating-icon.sunflower-mini {
+  animation-duration: 8s;
+  animation-delay: 5s;
+  color: var(--primary);
+  filter: drop-shadow(0 0 5px var(--accent-glow));
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg) scale(1.1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg) scale(0.9);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translateY(-30px) rotate(-5deg) scale(1.05);
+    opacity: 0.8;
+  }
 }
 
 /* ==================== HEADER ==================== */
@@ -315,6 +437,22 @@ html[data-theme="dark"] .page-header {
   margin-bottom: 30px;
   font-weight: 600;
   animation: fade-in-up 1s ease 0.2s both;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.35em;
+  background: var(--primary);
+  animation: blink-cursor 0.8s step-end infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .story-quote {
@@ -411,9 +549,57 @@ html[data-theme="dark"] .page-header {
 
 .floating-flower {
   position: absolute;
-  font-size: 100px;
-  opacity: 0.6;
+  top: 15%;
+  right: 20%;
+  font-size: 1.5rem;
+  animation: float-sparkle 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.floating-leaf {
+  position: absolute;
+  bottom: 25%;
+  left: 15%;
+  font-size: 1.8rem;
+  animation: float-sparkle 7s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+.floating-star {
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  font-size: 1.2rem;
+  animation: float-sparkle 4s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+  left: 50%;
+  animation-delay: 3s;
+}
+
+.floating-flower {
+  position: absolute;
+  font-size: 60px;
+  opacity: 0.7;
   animation: float-flower 8s ease-in-out infinite;
+}
+
+.floating-flower-1 {
+  top: 15%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+.floating-flower-2 {
+  bottom: 30%;
+  right: 20%;
+  animation-delay: 2.5s;
+}
+
+.floating-flower-3 {
+  top: 60%;
+  left: 15%;
+  animation-delay: 5s;
 }
 
 @keyframes float-sparkle {
